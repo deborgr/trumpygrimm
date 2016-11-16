@@ -1,6 +1,6 @@
 {
   "name": "trumpygrimm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "markov chain with grimm & trump",
   "main": "index.js",
   "scripts": {
