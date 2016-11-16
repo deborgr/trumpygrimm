@@ -9,7 +9,7 @@ var data = [];
 var markov, client, contents;
 
 //get the txt file and push sentences in to array
-contents = fs.readFileSync(__dirname + './grimm.txt');
+contents = fs.readFileSync(__dirname + '/grimm.txt');
 var txt = contents.toString().split(".");
 for(var i = 0; i < (txt.length-1); i++) {
   txt[i] = txt[i].toString().replace(/[^a-z0-9]/gmi, " ").replace(/\s+/g, " ");
@@ -43,7 +43,7 @@ exports.createMarkov = function(fileUrl, tweetParams) {
       q: 'Trump',
       lang: 'en',
       count: 500,
-      result_type: 'recent'
+      result_type: 'mixed'
     }
   };
 
