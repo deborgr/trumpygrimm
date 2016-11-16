@@ -1,0 +1,30 @@
+{
+  "name": "trumpygrimm",
+  "version": "0.0.1",
+  "description": "markov chain with grimm & trump",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoniDB/trumpygrimm.git"
+  },
+  "author": "deborger <joni.de.borger@gmail.com> (https://www.npmjs.com/~deborger)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoniDB/trumpygrimm/issues"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "homepage": "https://github.com/JoniDB/trumpygrimm#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "markov-strings": "^1.2.0",
+    "twitter": "^1.4.0"
+  }
+}

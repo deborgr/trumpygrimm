@@ -1,0 +1,10 @@
+//config file
+module.exports = {
+
+  //twitter authentication var's
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
+
+};
