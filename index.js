@@ -9,7 +9,7 @@ var data = [];
 var markov, client, contents;
 
 //get the txt file and push sentences in to array
-contents = fs.readFileSync('./grimm.txt');
+contents = fs.readFileSync(__dirname + './grimm.txt');
 var txt = contents.toString().split(".");
 for(var i = 0; i < (txt.length-1); i++) {
   txt[i] = txt[i].toString().replace(/[^a-z0-9]/gmi, " ").replace(/\s+/g, " ");
@@ -18,7 +18,7 @@ for(var i = 0; i < (txt.length-1); i++) {
 
 exports.createClient = function() {
 
-    var client = new Twitter({
+      client = new Twitter({
       consumer_key: c.consumer_key,
       consumer_secret: c.consumer_secret,
       access_token_key: c.access_token_key,
@@ -61,17 +61,14 @@ exports.createMarkov = function(fileUrl, tweetParams) {
   });
 }
 
-exports.getNewSentece = function() {
+exports.getNewSentence = function(callback) {
   if(markov != null ) {
     console.log('markov exists');
     markov.generateSentence()
     .then(result => {
-      //process string
-      //result.string = result.string.replace('\n',' ');
-      markovStrings.push(result);
-      console.log(result);
-      return result;
-    });
+        console.log(result);
+        callback(result);
+      })
   } else {
     console.log('No markov instance available');
     return 'no markov instance';
@@ -93,19 +90,6 @@ function newMarkov() {
     var markovStrings = [];
     // Build the corpus
     markov.buildCorpus();
-      /*.then(() => {
-        // Generate some tweets
-        console.log('this works');
-        for (var i = 0; i < 20; i++) {
-          markov.generateSentence()
-            .then(result => {
-              //process string
-              result.string = result.string.replace('\n',' ');
-              markovStrings.push(result);
-              console.log(result);
-            });
-        }
-      });*/
 }
 
 //MARKOV part
